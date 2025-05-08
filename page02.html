@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controladores</title>
+    <link rel="stylesheet" href="styles/page02.css">
+    <link rel="stylesheet" href="styles/color-picker.css">
+</head>
+<body>
+    <div class="controls-panel">
+        <div class="top-bar">
+            <div class="top-icons">
+                <img src="assets/list_paper.svg" alt="Download" class="top-icon">
+                <img src="assets/computer.svg" alt="Expand" class="top-icon">
+            </div>
+        </div>
+
+        <div class="control-item">
+            <div class="label-icon">
+                <span class="label">Volumen</span>
+                <img src="assets/volmax.svg" alt="Speaker" class="control-icon">
+            </div>
+            <input type="range" min="0" max="100" value="50">
+        </div>
+
+        <div class="control-item">
+            <div class="label-icon">
+                <span class="label">Alarma</span>
+                <img src="assets/campana.svg" alt="Alarm" class="control-icon">
+            </div>
+            <input type="range" min="0" max="100" value="25">
+        </div>
+
+        <div class="control-item">
+            <div class="label-icon">
+                <span class="label">Icon click callback</span>
+                <img src="assets/zoom-minus.svg" alt="Search" class="control-icon">
+            </div>
+            <input type="range" min="0" max="100" value="75">
+            <img src="assets/zoom-minus.svg" alt="Search" class="control-icon trailing-icon">
+        </div>
+
+        <div class="control-item color-card-container">
+            <div class="color-card">
+                <div id="color-preview" class="color-preview"></div>
+                <div class="color-controls">
+                    <div class="color-control-item">
+                        <label for="red">R</label>
+                        <input type="range" id="red" name="red" min="0" max="255" value="80">
+                        <input type="number" id="red-value" name="red-value" min="0" max="255" value="80">
+                    </div>
+                    <div class="color-control-item">
+                        <label for="green">G</label>
+                        <input type="range" id="green" name="green" min="0" max="255" value="165">
+                        <input type="number" id="green-value" name="green-value" min="0" max="255" value="165">
+                    </div>
+                    <div class="color-control-item">
+                        <label for="blue">B</label>
+                        <input type="range" id="blue" name="blue" min="0" max="255" value="92">
+                        <input type="number" id="blue-value" name="blue-value" min="0" max="255" value="92">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const redSlider = document.getElementById('red');
+        const greenSlider = document.getElementById('green');
+        const blueSlider = document.getElementById('blue');
+
+        const redValueInput = document.getElementById('red-value');
+        const greenValueInput = document.getElementById('green-value');
+        const blueValueInput = document.getElementById('blue-value');
+
+        const colorPreview = document.getElementById('color-preview');
+
+        function updateColor() {
+            const red = redSlider.value;
+            const green = greenSlider.value;
+            const blue = blueSlider.value;
+            const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+            colorPreview.style.backgroundColor = rgbColor;
+
+            redValueInput.value = red;
+            greenValueInput.value = green;
+            blueValueInput.value = blue;
+        }
+
+        redSlider.addEventListener('input', updateColor);
+        greenSlider.addEventListener('input', updateColor);
+        blueSlider.addEventListener('input', updateColor);
+
+        redValueInput.addEventListener('input', function() {
+            redSlider.value = this.value;
+            updateColor();
+        });
+
+        greenValueInput.addEventListener('input', function() {
+            greenSlider.value = this.value;
+            updateColor();
+        });
+
+        blueValueInput.addEventListener('input', function() {
+            blueSlider.value = this.value;
+            updateColor();
+        });
+
+        updateColor(); 
+    </script>
+</body>
+</html>
