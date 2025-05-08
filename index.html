@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Página Principal</h1>
+        </header>
+
+        <nav class="pagination">
+
+
+        </nav>
+
+        <div class="card-gallery">
+            <!-- Primera fila -->
+            <div class="card-row">
+                <a href="page01.html" class="card-container">
+                        <div class="card">
+                            <div class="card-front custom-domains">
+                                <h2>Custom Domains</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                            <div class="card-back custom-domains">
+                                <h2>Custom Domains</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+
+                <a href="page02.html" class="card-container">
+                        <div class="card">
+                            <div class="card-front never-sleeps">
+                                <h2>Never Sleeps</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                            <div class="card-back never-sleeps">
+                                <h2>Never Sleeps</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+
+
+
+                <a href="page03.html" class="card-container">
+                        <div class="card">
+                            <div class="card-front dedicated">
+                                <h2>Dedicated</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                            <div class="card-back dedicated">
+                                <h2>Dedicated</h2>
+                                <p>A cloud solution exploring the fundamentals</p>
+                                <div class="arrow-circle">
+                                    <span class="arrow">→</span>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para manejar la animación de las tarjetas
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener todas las tarjetas
+            const cards = document.querySelectorAll('.card');
+
+            // Añadir evento click a cada tarjeta
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    // Comprobar si la tarjeta ya está girada
+                    const isFlipped = this.classList.contains('flipped');
+
+                    // Alternar la clase para girar/desgirar
+                    if (isFlipped) {
+                        this.classList.remove('flipped');
+                        this.style.transform = 'rotateY(0deg)';
+                    } else {
+                        this.classList.add('flipped');
+                        this.style.transform = 'rotateY(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
