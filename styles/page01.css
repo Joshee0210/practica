@@ -1,0 +1,128 @@
+/* Reset de algunos márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al hacer foco en los campos */
+.form-input:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+/* Animación al recibir foco en el campo de texto */
+.form-input:focus + label, .form-input.active + label {
+    transform: translateY(-20px);
+    color: #00bcd4;
+}
+
+label {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para los botones */
+.btn {
+    padding: 10px 20px;
+    background-color: #0bbb4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0097a7;
+}
+
+/* Iconos SVG */
+.icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.icon-svg {
+    width: 30px;
+    height: 30px;
+    fill: #00bcd4;
+}
+
+/* Estilo para el campo de imagen (drag and drop) */
+.image-upload {
+    margin-top: 30px;
+}
+
+/* Estilo del contenedor de la imagen (mismo ancho que los campos de texto, 50px de altura) */
+.image-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.image-input svg {
+    fill: #00bcd4;
+    margin-right: 10px;
+}
+
+/* Agregar texto al área de drop */
+.image-input p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilo para el input de archivo oculto */
+.image-file-input {
+    display: none;
+}
+
+/* Estilo del contenedor para mostrar el pathname */
+#imagePath {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
