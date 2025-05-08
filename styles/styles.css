@@ -1,0 +1,192 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Navegación / Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Galería de tarjetas */
+.card-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Contenedor de la tarjeta y perspectiva 3D */
+.card-container {
+    flex: 1;
+    height: 220px;
+    perspective: 1000px;
+}
+
+/* Tarjeta con rotación 3D */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la tarjeta (frontal y trasera) */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+/* Fondos específicos para cada tipo de tarjeta */
+.custom-domains {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://img.freepik.com/fotos-premium/reloj-hora-doce-el_978914-18103.jpg?uid=R125358164&ga=GA1.1.591737711.1746717874&semt=ais_hybrid&w=740') center/cover no-repeat;
+    background-color: #8b0000;
+}
+
+.never-sleeps {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://img.freepik.com/foto-gratis/bodegon-libros-versus-tecnologia_23-2150062920.jpg?uid=R125358164&ga=GA1.1.591737711.1746717874&semt=ais_hybrid&w=740') center/cover no-repeat;
+    background-color: #00008b;
+}
+
+.dedicated {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://img.freepik.com/foto-gratis/diseno-abstracto-concepto-ciberseguridad_23-2151841688.jpg?uid=R125358164&ga=GA1.1.591737711.1746717874&semt=ais_hybrid&w=740') center/cover no-repeat;
+    background-color: #006400;
+}
+
+/* Cara trasera girada */
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Títulos y texto de las tarjetas */
+.card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Círculo con flecha */
+.arrow-circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.arrow {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Botón "VIEW MORE" */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-more {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more:hover {
+    background-color: #f1f1f1;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .card-row {
+        flex-direction: column;
+    }
+    
+    .card-container {
+        margin-bottom: 20px;
+    }
+}
